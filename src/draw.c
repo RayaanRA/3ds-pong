@@ -1,4 +1,5 @@
 #include "utils.h"
+#include "game.h"
 
 static void draw_title();
 static void draw_game();
@@ -69,7 +70,8 @@ static void draw_title() {
 }
 
 static void draw_game() {
-	return;
+	C2D_DrawRectSolid(left_paddle.x, left_paddle.y, 0.0f, left_paddle.w, left_paddle.h, left_paddle.color);
+	C2D_DrawRectSolid(right_paddle.x, right_paddle.y, 0.0f, right_paddle.w, right_paddle.h, right_paddle.color);
 }
 
 static void draw_win() {

@@ -1,12 +1,14 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include "utils.h"
+
 struct Paddle {
-	float x,
-	float y,
-	float w,
-	float h,
-	u32 color
+	float x;
+	float y;
+	float w;
+	float h;
+	u32 color;
 };
 
 extern struct Paddle left_paddle;

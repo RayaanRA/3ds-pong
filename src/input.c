@@ -1,4 +1,5 @@
 #include "input.h"
+#include "game.h"
 
 bool scan_input() {
 	hidScanInput();
@@ -32,6 +33,7 @@ bool scan_input() {
 void handle_title_input(u32 k_down) {
 	if (k_down & KEY_A) {
 		game_state = game;
+		init_paddles();
 	}
 }
 

@@ -1,4 +1,3 @@
-#include "utils.h"
 #include "draw.h"
 #include "input.h"
 
