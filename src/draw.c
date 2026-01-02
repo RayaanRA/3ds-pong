@@ -6,6 +6,9 @@ static void draw_win();
 
 static C2D_TextBuf title_buf;
 static C2D_Text title_text;
+static C2D_TextBuf title_play_buf;
+static C2D_Text title_play_text;
+static C2D_Font font_pixelify;
 u32 white;
 u32 bg_color;
 
@@ -37,13 +40,22 @@ void draw_top(C3D_RenderTarget* top) {
 }
 
 void init_text() {
-	title_buf = C2D_TextBufNew(5);
-	C2D_TextParse(&title_text, title_buf, "Pong");
+	font_pixelify = C2D_FontLoad("romfs:/resources/PixelifySans.bcfnt");
+	title_buf = C2D_TextBufNew(10);
+	C2D_TextFontParse(&title_text, font_pixelify, title_buf, "Pong");
 	C2D_TextOptimize(&title_text);
+
+	title_play_buf = C2D_TextBufNew(64);
+	C2D_TextFontParse(&title_play_text, font_pixelify, title_play_buf, "Press A to play");
+	C2D_TextOptimize(&title_play_text);
 }
 
 static void draw_title() {
-	C2D_DrawText(&title_text, C2D_AlignCenter | C2D_WithColor, TOP_SCREEN_WIDTH / 2, TOP_SCREEN_HEIGHT / 4, 0.0f, 1.0f, 1.0f, white);
+	C2D_DrawText(&title_text, 
+		C2D_AlignCenter | C2D_WithColor, TOP_SCREEN_WIDTH / 2, TOP_SCREEN_HEIGHT / 4, 0.0f, 1.0f, 1.0f, white);
+
+	C2D_DrawText(&title_play_text, 
+		C2D_AlignCenter | C2D_WithColor, TOP_SCREEN_WIDTH / 2, TOP_SCREEN_HEIGHT / 2, 0.0f, 0.75f, 0.75f, white);
 }
 
 static void draw_game() {

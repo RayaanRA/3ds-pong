@@ -5,7 +5,7 @@
 enum state game_state;
 
 int main(int argc, char* argv[]) {
-
+	romfsInit();
 	C3D_RenderTarget* top = init_graphics_top();
 
 	init_text();
@@ -21,6 +21,6 @@ int main(int argc, char* argv[]) {
 	C2D_Fini();
 	C3D_Fini();
 	gfxExit();
-
+	romfsExit();
 	return 0;
 }
