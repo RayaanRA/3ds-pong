@@ -1,5 +1,4 @@
 #include "utils.h"
-#include "game.h"
 #include "draw.h"
 #include "input.h"
 
