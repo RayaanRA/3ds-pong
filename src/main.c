@@ -9,12 +9,12 @@ int main(int argc, char* argv[]) {
 	C3D_RenderTarget* top = init_graphics_top();
 
 	init_text();
+	game_state = title;
 
 	while(aptMainLoop()) {
 		if (!scan_input()) {
 			break;
 		}
-		game_state = title;
 		draw_top(top);
 	}
 
