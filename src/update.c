@@ -2,7 +2,6 @@
 #include "game.h"
 
 static void update_title();
-static void update_game();
 static void update_win();
 
 void update_state() {
@@ -24,10 +23,6 @@ void update_state() {
 
 static void update_title() {
 	return;
-}
-
-static void update_game() {
-
 }
 
 static void update_win() {

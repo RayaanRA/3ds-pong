@@ -78,6 +78,8 @@ static void draw_game() {
 		C2D_DrawRectSolid(TOP_SCREEN_WIDTH / 2 - 2, y, 0.0f, 4, 10, white);
 		y += 21;
 	}
+
+	C2D_DrawCircleSolid(ball.x, ball.y, 0.0f, ball.radius, ball.color);
 }
 
 static void draw_win() {

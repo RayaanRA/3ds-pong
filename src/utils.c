@@ -9,3 +9,13 @@ C3D_RenderTarget* init_graphics_top() {
 
 	return C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
 }
+
+float clamp(float value, float min, float max) {
+	if (value < min) {
+		return min;
+	} else if (value > max) {
+		return max;
+	} else {
+		return value;
+	}
+}
