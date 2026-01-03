@@ -8,6 +8,7 @@ struct Paddle {
 	float y;
 	float w;
 	float h;
+	float speed;
 	u32 color;
 };
 
@@ -19,6 +20,7 @@ struct Ball {
 	u32 color;
 	float x_velocity;
 	float y_velocity;
+	float speed;
 };
 
 extern struct Paddle left_paddle;
