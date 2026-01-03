@@ -72,6 +72,12 @@ static void draw_title() {
 static void draw_game() {
 	C2D_DrawRectSolid(left_paddle.x, left_paddle.y, 0.0f, left_paddle.w, left_paddle.h, left_paddle.color);
 	C2D_DrawRectSolid(right_paddle.x, right_paddle.y, 0.0f, right_paddle.w, right_paddle.h, right_paddle.color);
+
+	int y = 10;
+	for (int i = 0; i < 11; i++) {
+		C2D_DrawRectSolid(TOP_SCREEN_WIDTH / 2 - 2, y, 0.0f, 4, 10, white);
+		y += 21;
+	}
 }
 
 static void draw_win() {
