@@ -46,6 +46,14 @@ void handle_game_input(u32 k_held) {
 	}
 	if (left_paddle.y < 0) {left_paddle.y = 0;}
 	if (left_paddle.y + left_paddle.h > TOP_SCREEN_HEIGHT) {left_paddle.y = TOP_SCREEN_HEIGHT - left_paddle.h;}
+
+	if (k_held & KEY_X) {
+		right_paddle.y -= 5;
+	} else if (k_held & KEY_B) {
+		right_paddle.y += 5;
+	}
+	if (right_paddle.y < 0) {right_paddle.y = 0;}
+	if (right_paddle.y + right_paddle.h > TOP_SCREEN_HEIGHT) {right_paddle.y = TOP_SCREEN_HEIGHT - right_paddle.h;}
 }
 
 void handle_win_input(u32 k_down) {
